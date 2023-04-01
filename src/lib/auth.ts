@@ -1,23 +1,22 @@
-import { PrismaAdapter } from "@next-auth/prisma-adapter"
-import { NextAuthOptions, type User } from "next-auth"
-import EmailProvider from "next-auth/providers/email"
-import GitHubProvider from "next-auth/providers/github"
+import { db } from "@/lib/db";
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
+import { NextAuthOptions, type User } from "next-auth";
+import EmailProvider from "next-auth/providers/email";
+import GitHubProvider from "next-auth/providers/github";
 
-import { db } from "@/lib/db"
-
-type UserId = string
+type UserId = string;
 
 declare module "next-auth/jwt" {
   interface JWT {
-    id: UserId
+    id: UserId;
   }
 }
 
 declare module "next-auth" {
   interface Session {
     user: User & {
-      id: UserId
-    }
+      id: UserId;
+    };
   }
 }
 
@@ -29,7 +28,8 @@ export const authOptions: NextAuthOptions = {
     strategy: "jwt",
   },
   pages: {
-    signIn: "/login",
+    signIn: "/sign-in",
+    // newUser: "/new-user", // don't redirect here, we handle that manually
   },
   providers: [
     GitHubProvider({
@@ -44,26 +44,26 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     async session({ token, session }) {
       if (token) {
-        session.user.id = token.id
-        session.user.name = token.name
-        session.user.email = token.email
-        session.user.image = token.picture
+        session.user.id = token.id;
+        session.user.name = token.name;
+        session.user.email = token.email;
+        session.user.image = token.picture;
       }
 
-      return session
+      return session;
     },
     async jwt({ token, user }) {
       const dbUser = await db.user.findFirst({
         where: {
           email: token.email,
         },
-      })
+      });
 
       if (!dbUser) {
         if (user) {
-          token.id = user?.id
+          token.id = user?.id;
         }
-        return token
+        return token;
       }
 
       return {
@@ -71,7 +71,7 @@ export const authOptions: NextAuthOptions = {
         name: dbUser.name,
         email: dbUser.email,
         picture: dbUser.image,
-      }
+      };
     },
   },
-}
+};
