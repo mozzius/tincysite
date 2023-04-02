@@ -24,7 +24,7 @@ export default function Homepage() {
 const HeroSection = () => (
   <>
     <div className="relative h-screen min-h-[600px] overflow-hidden">
-      <Panel className="absolute left-1/2 top-1/2 z-0 -translate-x-1/2 space-y-8 portrait:-translate-y-1/2 landscape:-translate-y-2/3">
+      <Panel className="absolute left-1/2 top-1/2 z-0 -translate-x-1/2 space-y-8 translate-y-[calc(-50%+100px)] md:-translate-y-2/3">
         <h1 className="max-w-xl text-6xl font-medium">
           Your next website costs £0 up front
         </h1>
@@ -47,7 +47,7 @@ const HeroSection = () => (
           <li>Flat monthly fee - only £100!</li>
           <li>100% fully managed</li>
         </ul>
-        <div className="aspect-video w-full overflow-hidden rounded shadow-2xl landscape:hidden">
+        <div className="aspect-video w-full overflow-hidden rounded shadow-2xl md:hidden">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="https://i.tincy.pics/clfzdn2g600002e6946c2sb64"
@@ -66,7 +66,7 @@ const HeroSection = () => (
       </div>
     </div>
     {/* foreground images - different panel due to overflow issues */}
-    <div className="pointer-events-none absolute top-0 -z-10 hidden h-screen min-h-[600px] w-full items-center md:flex">
+    <div className="pointer-events-none absolute top-0 z-10 hidden h-[200vh] min-h-[600px] w-full items-center overflow-x-hidden overflow-y-visible pb-[100vh] md:flex">
       <Panel>
         <div className="relative h-96 w-full">
           <div
@@ -81,7 +81,7 @@ const HeroSection = () => (
               }}
             />
           </div>
-          <div className="absolute bottom-0 hidden aspect-video w-1/2 translate-x-1/4 rounded-lg bg-white shadow-2xl md:right-24 md:block lg:right-32 xl:right-48">
+          <div className="pointer-events-auto absolute bottom-0 aspect-video w-1/2 translate-x-1/4 rounded-lg bg-white shadow-2xl md:right-24 lg:right-32 xl:right-48">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="https://i.tincy.pics/clfzdgz1j00002e69ksdb81lu"
@@ -94,14 +94,14 @@ const HeroSection = () => (
             aria-hidden="true"
           >
             <div
-              className="relative left-1/2 md:top-0 top-full aspect-[1155/678] w-full -translate-x-1/2 bg-gradient-to-tr from-indigo-400 to-indigo-500 opacity-30"
+              className="relative left-1/2 top-full aspect-[1155/678] w-full -translate-x-1/2 bg-gradient-to-tr from-indigo-400 to-indigo-500 opacity-30 lg:-translate-y-1/4 xl:-translate-y-[40%]"
               style={{
                 clipPath:
                   "polygon(91.94% 99.37%, 93.86% 86.87%, 91.01% 69.54%, 89.67% 55.37%, 77.22% 48.78%, 64.97% 49.08%, 61.71% 56.48%, 54.02% 51.32%, 51.09% 70.54%, 44.74% 67.07%, 16.38% 83.61%, 21.89% 91.95%, 43.97% 101.97%, 59.58% 102.66%, 72.28% 103.23%, 87.19% 105.09%)",
               }}
             />
           </div>
-          <div className="absolute bottom-[-40%] aspect-video w-1/2 rounded-lg bg-white shadow-2xl md:right-24 lg:right-32 xl:right-48">
+          <div className="pointer-events-auto absolute bottom-[-40%] aspect-video w-1/2 rounded-lg bg-white shadow-2xl md:right-24 lg:right-32 xl:right-48">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="https://i.tincy.pics/clfzdn2g600002e6946c2sb64"
