@@ -1,11 +1,11 @@
-import { FancyBackground } from "@tincy/components/fancy-background";
-import { SignOutButton } from "@tincy/components/sign-out-button";
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
 } from "@tincy/components/ui/avatar";
 
+import { FancyBackground } from "~/components/fancy-background";
+import { SignOutButton } from "~/components/sign-out-button";
 import { getCurrentUser } from "~/lib/session";
 
 export default async function DashboardPage() {
@@ -22,7 +22,7 @@ export default async function DashboardPage() {
               {user.name
                 ?.split(" ")
                 .filter(Boolean)
-                .map((x) => x[0].toLocaleUpperCase())}
+                .map((x) => x[0]!.toLocaleUpperCase())}
             </AvatarFallback>
           </Avatar>
           <p className="text-xl font-medium">{user.name}</p>

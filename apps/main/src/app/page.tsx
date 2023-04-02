@@ -1,9 +1,8 @@
 import Link from "next/link";
 import { Github } from "lucide-react";
 
-import { buttonVariants } from "@tincy/components/ui/button";
-
 import { cn } from "~/lib/utils";
+import { buttonVariants } from "@tincy/components/ui/button";
 
 export default function Homepage() {
   return (
@@ -16,7 +15,7 @@ export default function Homepage() {
         >
           Sign up
         </Link>
-        <Link
+        <a
           href="https://github.com/mozzius/next13-with-auth"
           target="_blank"
           className={cn(
@@ -25,7 +24,7 @@ export default function Homepage() {
         >
           <Github size={16} />
           View source
-        </Link>
+        </a>
       </div>
     </main>
   );

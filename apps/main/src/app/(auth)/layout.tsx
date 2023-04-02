@@ -1,4 +1,4 @@
-import { FancyBackground } from "@tincy/components/fancy-background";
+import { FancyBackground } from "~/components/fancy-background";
 
 export default function AuthLayout({ children }) {
   return (

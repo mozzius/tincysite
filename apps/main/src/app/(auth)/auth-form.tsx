@@ -5,11 +5,10 @@ import { useSearchParams } from "next/navigation";
 import { Github, Mail } from "lucide-react";
 import { signIn } from "next-auth/react";
 
+import { toast } from "@tincy/components/lib/hooks/use-toast";
 import { Button } from "@tincy/components/ui/button";
 import { Input } from "@tincy/components/ui/input";
 import { Separator } from "@tincy/components/ui/separator";
-
-import { toast } from "~/lib/hooks/use-toast";
 
 interface Props {
   sign: "in" | "up";
@@ -45,23 +44,26 @@ export function AuthForm({ sign }: Props) {
 
           switch (res?.ok) {
             case true:
-              return toast({
+              toast({
                 title: "Check your email",
                 description:
                   "We sent you a login link. Be sure to check your spam too.",
               });
+              break;
             case false:
-              return toast({
+              toast({
                 title: "Error",
                 description: "Your sign in request failed. Please try again.",
                 variant: "destructive",
               });
+              break;
             default:
-              return toast({
+              toast({
                 title: "Error",
                 description: "Something went wrong. Please try again.",
                 variant: "destructive",
               });
+              break;
           }
         }}
       >

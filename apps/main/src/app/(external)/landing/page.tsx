@@ -24,12 +24,13 @@ export default function Homepage() {
 const HeroSection = () => (
   <>
     <div className="relative h-screen min-h-[600px] overflow-hidden">
-      <Panel className="absolute left-1/2 top-1/2 z-20 -translate-x-1/2 space-y-8 portrait:-translate-y-1/2 landscape:-translate-y-2/3">
+      <Panel className="absolute left-1/2 top-1/2 z-0 -translate-x-1/2 space-y-8 portrait:-translate-y-1/2 landscape:-translate-y-2/3">
         <h1 className="max-w-xl text-6xl font-medium">
           Your next website costs £0 up front
         </h1>
-        <p className="max-w-xl text-xl text-gray-600">
-          We handle literally everything, letting you focus on what you do best
+        <p className="max-w-lg text-xl sm:text-gray-600">
+          We handle literally everything, letting you focus on what you do best.
+          No more hassle.
         </p>
         <Link
           href="/sign-up"
@@ -41,7 +42,7 @@ const HeroSection = () => (
             className="transition-transform group-hover:translate-x-2"
           />
         </Link>
-        <ul className="mt-4 w-max list-disc pl-4 text-lg portrait:hidden">
+        <ul className="mt-4 w-max list-disc pl-4 text-lg text-gray-600 portrait:hidden">
           <li>Beatiful, modern designs</li>
           <li>Flat monthly fee - only £100!</li>
           <li>100% fully managed</li>
@@ -56,32 +57,56 @@ const HeroSection = () => (
         </div>
       </Panel>
       {/* background shapes */}
-      <div className="absolute inset-0 z-0 max-h-screen">
-        <div className="bg-grid-paper absolute inset-0 z-0" />
-        <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent to-white to-80% sm:bg-gradient-to-t" />
-        <div className="absolute left-1/2 top-1/2 z-0 h-[200vh] w-[200vw] origin-center -translate-x-0 translate-y-[-20%] -rotate-45 bg-indigo-300 md:-translate-x-1/4 md:translate-y-0" />
-        <div className="absolute left-1/2 top-1/2 z-0 h-[200vh] w-[200vw] origin-center -translate-x-1/4 translate-y-0 rotate-[-23deg] bg-indigo-400" />
-        <div className="absolute left-1/2 top-1/2 z-0 h-[200vh] w-[200vw] origin-center -translate-x-1/4 translate-y-[10%] -rotate-6 bg-indigo-500" />
+      <div className="absolute inset-0 -z-20 max-h-screen">
+        <div className="bg-grid-paper absolute inset-0" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white to-80% md:bg-gradient-to-t" />
+        <div className="absolute left-1/2 top-1/2 h-[200vh] w-[200vw] origin-center -translate-x-0 translate-y-[-20%] -rotate-45 bg-indigo-300 md:-translate-x-1/4 md:translate-y-0" />
+        <div className="absolute left-1/2 top-1/2 h-[200vh] w-[200vw] origin-center -translate-x-1/4 translate-y-0 rotate-[-23deg] bg-indigo-400" />
+        <div className="absolute left-1/2 top-1/2 h-[200vh] w-[200vw] origin-center -translate-x-1/4 translate-y-[10%] -rotate-6 bg-indigo-500" />
       </div>
     </div>
     {/* foreground images - different panel due to overflow issues */}
-    <div className="pointer-events-none absolute top-0 z-20 flex h-screen min-h-[600px] w-full items-center">
+    <div className="pointer-events-none absolute top-0 -z-10 hidden h-screen min-h-[600px] w-full items-center md:flex">
       <Panel>
         <div className="relative h-96 w-full">
-          <div className="absolute bottom-0 hidden aspect-video w-1/2 translate-x-1/4 overflow-hidden rounded-lg bg-white shadow-2xl md:right-24 md:block lg:right-32 xl:right-48">
+          <div
+            className="absolute inset-x-0 transform-gpu overflow-hidden blur-3xl"
+            aria-hidden="true"
+          >
+            <div
+              className="relative left-1/2 top-full aspect-[1155/678] w-full -translate-x-1/2 bg-gradient-to-tr from-indigo-400 to-indigo-500 opacity-30"
+              style={{
+                clipPath:
+                  "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+              }}
+            />
+          </div>
+          <div className="absolute bottom-0 hidden aspect-video w-1/2 translate-x-1/4 rounded-lg bg-white shadow-2xl md:right-24 md:block lg:right-32 xl:right-48">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="https://i.tincy.pics/clfzdgz1j00002e69ksdb81lu"
               alt="website screenshot"
-              className="h-full w-full object-cover"
+              className="h-full w-full rounded-lg object-cover"
             />
           </div>
-          <div className="absolute bottom-[-40%] hidden aspect-video w-1/2 overflow-hidden rounded-lg bg-white shadow-2xl md:right-24 md:block lg:right-32 xl:right-48">
+          <div
+            className="absolute inset-x-0 transform-gpu overflow-hidden blur-3xl"
+            aria-hidden="true"
+          >
+            <div
+              className="relative left-1/2 md:top-0 top-full aspect-[1155/678] w-full -translate-x-1/2 bg-gradient-to-tr from-indigo-400 to-indigo-500 opacity-30"
+              style={{
+                clipPath:
+                  "polygon(91.94% 99.37%, 93.86% 86.87%, 91.01% 69.54%, 89.67% 55.37%, 77.22% 48.78%, 64.97% 49.08%, 61.71% 56.48%, 54.02% 51.32%, 51.09% 70.54%, 44.74% 67.07%, 16.38% 83.61%, 21.89% 91.95%, 43.97% 101.97%, 59.58% 102.66%, 72.28% 103.23%, 87.19% 105.09%)",
+              }}
+            />
+          </div>
+          <div className="absolute bottom-[-40%] aspect-video w-1/2 rounded-lg bg-white shadow-2xl md:right-24 lg:right-32 xl:right-48">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="https://i.tincy.pics/clfzdn2g600002e6946c2sb64"
               alt="website screenshot"
-              className="h-full w-full object-cover"
+              className="h-full w-full rounded-lg object-cover"
             />
           </div>
         </div>
@@ -159,7 +184,7 @@ interface Props extends React.PropsWithChildren {
 }
 const Panel = ({ className, ...rest }: Props) => (
   <section
-    className={cn("container mx-auto p-8 md:px-16 lg:px-32", className)}
+    className={cn("container mx-auto p-8 md:px-16", className)}
     {...rest}
   />
 );
