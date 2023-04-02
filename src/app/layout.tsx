@@ -8,6 +8,11 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+export const metadata = {
+  title: "tincy.site - Get your own tiny website",
+  description: "We provide fully managed websites, £0 up front",
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
