@@ -43,6 +43,9 @@ importers:
       '@tincy/components':
         specifier: 0.1.0
         version: link:../../packages/components
+      '@tincy/db':
+        specifier: 0.1.0
+        version: link:../../packages/db
       '@tincy/tailwind-config':
         specifier: 0.1.0
         version: link:../../packages/config/tailwind
