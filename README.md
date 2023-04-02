@@ -26,38 +26,40 @@ The starter comes with `@ianvs/prettier-plugin-sort-imports` for automatically s
 ### Input
 
 ```tsx
-import * as React from "react"
-import Link from "next/link"
+import * as React from "react";
+import Link from "next/link";
 
-import { siteConfig } from "@/config/site"
-import { buttonVariants } from "@/components/ui/button"
-import "@/styles/globals.css"
-import { twMerge } from "tailwind-merge"
+import { buttonVariants } from "@tincy/components/ui/button";
 
-import { NavItem } from "@/types/nav"
-import { cn } from "@/lib/utils"
+import { siteConfig } from "~/config/site";
+import "~/styles/globals.css";
+import { twMerge } from "tailwind-merge";
+
+import { cn } from "~/lib/utils";
+import { NavItem } from "~/types/nav";
 ```
 
 ### Output
 
 ```tsx
-import * as React from "react"
+import * as React from "react";
 // React is always first.
-import Link from "next/link"
+import Link from "next/link";
 // Followed by next modules.
-import { twMerge } from "tailwind-merge"
+import { twMerge } from "tailwind-merge";
 
 // Followed by third-party modules
 // Space
-import "@/styles/globals.css"
-// styles
-import { NavItem } from "@/types/nav"
-// types
-import { siteConfig } from "@/config/site"
-// config
-import { cn } from "@/lib/utils"
+import "~/styles/globals.css";
 // lib
-import { buttonVariants } from "@/components/ui/button"
+import { buttonVariants } from "@tincy/components/ui/button";
+
+// types
+import { siteConfig } from "~/config/site";
+// config
+import { cn } from "~/lib/utils";
+// styles
+import { NavItem } from "~/types/nav";
 
 // components
 ```
@@ -69,7 +71,7 @@ The `cn` util handles conditional classes and class merging.
 ### Input
 
 ```ts
-cn("px-2 bg-slate-100 py-2 bg-slate-200")
+cn("px-2 bg-slate-100 py-2 bg-slate-200");
 // Outputs `p-2 bg-slate-200`
 ```
 
