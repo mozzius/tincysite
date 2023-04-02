@@ -109,6 +109,9 @@ dependencies:
   next-auth:
     specifier: ^4.20.1
     version: 4.20.1(next@13.2.4)(nodemailer@6.9.1)(react-dom@18.2.0)(react@18.2.0)
+  next-plausible:
+    specifier: ^3.7.2
+    version: 3.7.2(next@13.2.4)(react-dom@18.2.0)(react@18.2.0)
   next-themes:
     specifier: ^0.2.1
     version: 0.2.1(next@13.2.4)(react-dom@18.2.0)(react@18.2.0)
@@ -3350,6 +3353,18 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       uuid: 8.3.2
+    dev: false
+
+  /next-plausible@3.7.2(next@13.2.4)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-9PqFiVtD1kZO5gHFYTcgilHhg2WhMzD6I4NK/RUh9DGavD1N11IhNAvyGLFmvB3f4FtHC9IoAsauYDtQBt+riA==}
+    peerDependencies:
+      next: ^11.1.0 || ^12.0.0 || ^13.0.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      next: 13.2.4(@babel/core@7.21.4)(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /next-themes@0.2.1(next@13.2.4)(react-dom@18.2.0)(react@18.2.0):

@@ -1,3 +1,9 @@
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
@@ -8,6 +14,7 @@ export default function Homepage() {
     <main>
       <HeroSection />
       <PitchSection />
+      <ProcessSection />
     </main>
   );
 }
@@ -19,7 +26,9 @@ const HeroSection = () => (
         <h1 className="max-w-xl text-6xl font-medium">
           Your next website costs £0 up front
         </h1>
-        <p className="text-xl">...and then exactly £100/month</p>
+        <p className="max-w-xl text-xl text-gray-600">
+          We handle literally everything, letting you focus on what you do best
+        </p>
         <Link
           href="/sign-up"
           className={cn(buttonVariants({ size: "lg", hasIcon: true }))}
@@ -32,7 +41,7 @@ const HeroSection = () => (
         </Link>
         <ul className="mt-4 w-max list-disc pl-4 text-lg portrait:hidden">
           <li>Beatiful, modern designs</li>
-          <li>Flat monthly fee</li>
+          <li>Flat monthly fee - only £100!</li>
           <li>100% fully managed</li>
         </ul>
         <div className="aspect-video w-full overflow-hidden rounded shadow-2xl landscape:hidden">
@@ -80,7 +89,7 @@ const HeroSection = () => (
 );
 
 const PitchSection = () => (
-  <section className="bg-indigo-500 py-8 text-white">
+  <div className="bg-indigo-500 py-8 text-white">
     <Panel className="flex flex-col gap-4 text-center">
       <h2 className="text-5xl font-medium">
         Websites are a hassle... why exactly?
@@ -100,7 +109,47 @@ const PitchSection = () => (
       </p>
       <p className="mt-8">All with £0 up front.</p>
     </Panel>
-  </section>
+  </div>
+);
+
+const ProcessSection = () => (
+  <div className="bg-white py-8">
+    <Panel className="space-y-4">
+      <h2 className="text-center text-xl font-medium">Our Process</h2>
+      <Accordion type="multiple">
+        <AccordionItem value="item-1">
+          <AccordionTrigger>Step 1: Tell us about yourself</AccordionTrigger>
+          <AccordionContent>
+            Tell us about your business, and what content you want on your
+            website. You also need to give us your logo and other brand details
+            you might have, like colours and fonts.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-2">
+          <AccordionTrigger>Step 2: Pick a theme</AccordionTrigger>
+          <AccordionContent>
+            We&apos;ll consult with you to figure out which of our preset themes
+            would work best for you. We currently have 0 themes to choose from,
+            with more coming soon.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-3">
+          <AccordionTrigger>Step 3: Wait</AccordionTrigger>
+          <AccordionContent>
+            We&apos;ll create your website, no effort from you required!
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-4">
+          <AccordionTrigger>Step 4: Launch</AccordionTrigger>
+          <AccordionContent>
+            If you&apos;re happy for what we&apos;ve built, then we&apos;ll
+            launch your site. We&apos;ll handle all the complicated domain and
+            hosting stuff, as well as SEO.
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    </Panel>
+  </div>
 );
 
 interface Props extends React.PropsWithChildren {
