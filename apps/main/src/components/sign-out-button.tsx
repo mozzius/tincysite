@@ -18,7 +18,7 @@ export const SignOutButton = ({ callbackUrl = "/", ...props }: Props) => {
         await signOut({ callbackUrl })
         // in case the sign out fails, we want to stop the loading state
         // not sure why this would happen, but it might
-        setTimeout(() => setLoading(false), 500);
+        setTimeout(() => setLoading(false), 100);
       }}
       loading={loading || props.loading}
       {...props}
