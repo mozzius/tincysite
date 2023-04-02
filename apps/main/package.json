@@ -13,12 +13,12 @@
     "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
-    "lucide-react": "0.129.0",
     "@next-auth/prisma-adapter": "^1.0.5",
     "@prisma/client": "^4.12.0",
-    "@tincy/components": "workspace:*",
-    "@tincy/tailwind-config": "workspace:*",
+    "@tincy/components": "0.1.0",
+    "@tincy/tailwind-config": "0.1.0",
     "clsx": "^1.2.1",
+    "lucide-react": "0.129.0",
     "next": "^13.2.4",
     "next-auth": "^4.20.1",
     "next-plausible": "^3.7.2",
@@ -32,7 +32,7 @@
     "zod": "^3.21.4"
   },
   "devDependencies": {
-    "@tincy/eslint-config": "workspace:*",
+    "@tincy/eslint-config": "0.1.0",
     "@types/node": "^18.15.11",
     "@types/react": "^18.0.31",
     "@types/react-dom": "^18.0.11",
