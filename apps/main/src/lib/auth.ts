@@ -1,5 +1,5 @@
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
-import { NextAuthOptions, type User } from "next-auth";
+import { type NextAuthOptions, type User } from "next-auth";
 import EmailProvider from "next-auth/providers/email";
 import GitHubProvider from "next-auth/providers/github";
 
@@ -24,6 +24,7 @@ declare module "next-auth" {
 export const authOptions: NextAuthOptions = {
   // This is a temporary fix for prisma client.
   // @see https://github.com/prisma/prisma/issues/16117
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-explicit-any
   adapter: PrismaAdapter(db as any),
   session: {
     strategy: "jwt",
@@ -43,7 +44,7 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   callbacks: {
-    async session({ token, session }) {
+    session({ token, session }) {
       if (token) {
         session.user.id = token.id;
         session.user.name = token.name;

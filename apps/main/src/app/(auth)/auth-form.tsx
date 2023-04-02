@@ -32,7 +32,7 @@ export function AuthForm({ sign }: Props) {
 
           setEmailLoading(true);
 
-          const email = e.currentTarget.email.value;
+          const email = (e.currentTarget.email as HTMLInputElement).value;
 
           const res = await signIn("email", {
             email,
@@ -96,9 +96,9 @@ export function AuthForm({ sign }: Props) {
 
       <Button
         variant="outline"
-        onClick={() => {
+        onClick={async () => {
           setGithubLoading(true);
-          signIn("github", { callbackUrl });
+          await signIn("github", { callbackUrl });
         }}
         icon={Github}
         disabled={isLoading}

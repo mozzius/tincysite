@@ -4,11 +4,10 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { type Session } from "next-auth";
 
+import { toast } from "@tincy/components/lib/hooks/use-toast";
 import { Button } from "@tincy/components/ui/button";
 import { Input } from "@tincy/components/ui/input";
 import { Label } from "@tincy/components/ui/label";
-
-import { toast } from "~/lib/hooks/use-toast";
 
 interface Props {
   user: Session["user"];
@@ -24,7 +23,7 @@ export const NewUserForm = ({ user }: Props) => {
       onSubmit={async (evt) => {
         evt.preventDefault();
 
-        const name = evt.currentTarget.username.value;
+        const name = (evt.currentTarget.username as HTMLInputElement).value;
 
         setLoading(true);
 

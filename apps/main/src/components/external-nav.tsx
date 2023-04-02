@@ -18,13 +18,14 @@ import {
 import { cn } from "~/lib/utils";
 
 export const ExternalNav = () => {
-  const [atTop, setAtTop] = useState(window.scrollY <= 0);
+  const [atTop, setAtTop] = useState(true);
 
   useEffect(() => {
+    setAtTop(window.scrollY <= 0);
     window.onscroll = () => setAtTop(window.scrollY <= 0);
 
     return () => void (window.onscroll = null);
-  });
+  }, []);
 
   return (
     <header
@@ -88,7 +89,10 @@ export const ExternalNav = () => {
           </NavigationMenuList>
         </NavigationMenu>
         <div className="flex items-center gap-1">
-          <Link href="/sign-in" className={cn(buttonVariants({ variant: "ghost" }))}>
+          <Link
+            href="/sign-in"
+            className={cn(buttonVariants({ variant: "ghost" }))}
+          >
             Sign in
           </Link>
           <Link
