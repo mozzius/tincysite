@@ -24,13 +24,12 @@ export default function Homepage() {
 const HeroSection = () => (
   <>
     <div className="relative h-screen min-h-[600px] overflow-hidden">
-      <Panel className="absolute left-1/2 top-1/2 z-0 -translate-x-1/2 space-y-8 translate-y-[calc(-50%+100px)] md:-translate-y-2/3">
+      <Panel className="absolute left-1/2 top-1/2 z-0 -translate-x-1/2 translate-y-[calc(-50%+100px)] space-y-8 md:-translate-y-2/3">
         <h1 className="max-w-xl text-6xl font-medium">
-          Your next website costs £0 up front
+          Websites with zero hassle guaranteed.
         </h1>
         <p className="max-w-lg text-xl sm:text-gray-600">
           We handle literally everything, letting you focus on what you do best.
-          No more hassle.
         </p>
         <Link
           href="/sign-up"
