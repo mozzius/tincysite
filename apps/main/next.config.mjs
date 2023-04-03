@@ -1,3 +1,5 @@
+import { withPlausibleProxy } from "next-plausible";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -18,4 +20,4 @@ const nextConfig = {
   typescript: { ignoreBuildErrors: !!process.env.CI },
 };
 
-export default nextConfig;
+export default withPlausibleProxy()(nextConfig);
