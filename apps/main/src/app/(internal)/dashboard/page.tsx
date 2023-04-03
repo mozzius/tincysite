@@ -14,7 +14,7 @@ export default async function DashboardPage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
       <FancyBackground />
-      <div className="min-w-[400px] space-y-4 rounded border bg-white p-6 shadow-2xl">
+      <div className="min-w-[400px] space-y-4 rounded bg-white p-6 shadow-2xl">
         <div className="flex items-center gap-4">
           <Avatar>
             <AvatarImage src={user.image!} alt={user.name!} />
