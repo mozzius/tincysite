@@ -6,8 +6,6 @@ import PlausibleProvider from "next-plausible";
 
 import { Providers } from "./providers";
 
-export const runtime = "edge";
-
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",

@@ -32,7 +32,7 @@ export const ExternalNav = () => {
       data-at-top={atTop}
       className="fixed top-0 z-20 w-full transition-all data-[at-top=false]:bg-white/80 data-[at-top=false]:shadow-sm"
     >
-      <nav className="container relative mx-auto flex items-center justify-between px-8 py-2 md:px-16">
+      <nav className="container relative flex items-center justify-between px-8 py-2 md:px-16">
         <Link
           href="/"
           className={cn(buttonVariants({ variant: "ghost" }), "font-bold")}

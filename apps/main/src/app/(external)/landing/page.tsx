@@ -183,7 +183,7 @@ interface Props extends React.PropsWithChildren {
 }
 const Panel = ({ className, ...rest }: Props) => (
   <section
-    className={cn("container mx-auto p-8 md:px-16", className)}
+    className={cn("container p-8 md:px-16", className)}
     {...rest}
   />
 );
