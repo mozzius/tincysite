@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { Github } from "lucide-react";
 
-import { cn } from "~/lib/utils";
 import { buttonVariants } from "@tincy/components/ui/button";
+
+import { cn } from "~/lib/utils";
+
+export const runtime = "edge";
 
 export default function Homepage() {
   return (
