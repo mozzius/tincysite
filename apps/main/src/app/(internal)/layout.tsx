@@ -29,7 +29,7 @@ export default async function InternalLayout({ children }) {
         <div className="container border-t">{children}</div>
         <div className="flex-1" />
         <footer className="container mt-4 border-t py-6 text-sm text-slate-500">
-          © {new Date().getFullYear()} tincy.site
+          © {new Date().getFullYear()} Samuel Newman
         </footer>
       </div>
     </div>

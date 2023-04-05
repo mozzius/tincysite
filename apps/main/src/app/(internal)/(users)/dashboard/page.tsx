@@ -1,3 +1,10 @@
+import { AggregateStats } from "../analytics/aggregate-stats";
+
 export default async function DashboardPage() {
-  return <div>Hello</div>;
+  return (
+    <>
+      {/** @ts-expect-error async serer component */}
+      <AggregateStats />
+    </>
+  );
 }
