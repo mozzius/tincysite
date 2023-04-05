@@ -7,7 +7,7 @@ export default async function UsersLayout({ children }) {
       children={children}
       nav={
         <>
-          <Link href="/admin/dashboard">Dashboard</Link>
+          <Link href="/admin/overview">Overview</Link>
           <Link href="/admin/users">Users</Link>
         </>
       }

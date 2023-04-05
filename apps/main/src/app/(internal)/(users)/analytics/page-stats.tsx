@@ -18,7 +18,7 @@ interface Props {
   period?: string;
 }
 
-export async function PagesStats({ period }: Props) {
+export async function PageStats({ period }: Props) {
   const site = "tincy.site";
   const params = new URLSearchParams();
   params.append("site_id", site);
@@ -30,9 +30,7 @@ export async function PagesStats({ period }: Props) {
     { headers, next: { revalidate: 5 } },
   );
 
-  if (!res.ok) {
-    return <div className="my-10 text-center">Failed to fetch analytics</div>;
-  }
+  if (!res.ok) throw new Error("Failed to fetch analytics");
 
   const data = await res.json();
 

@@ -1,5 +1,5 @@
 import { AggregateStats } from "./aggregate-stats";
-import { PagesStats } from "./pages-stats";
+import { PageStats } from "./page-stats";
 import { PeriodSelect } from "./period-select";
 import { SourceStats } from "./source-stats";
 
@@ -13,7 +13,7 @@ export default function AnalyticsPage({ searchParams }) {
       </div>
       <div className="grid w-full grid-cols-1 gap-8 p-4 md:grid-cols-2">
         {/** @ts-expect-error async serer component */}
-        <PagesStats period={searchParams.period} />
+        <PageStats period={searchParams.period} />
         {/** @ts-expect-error async serer component */}
         <SourceStats period={searchParams.period} />
       </div>
