@@ -3,15 +3,15 @@ import { withPlausibleProxy } from "next-plausible";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  fontLoaders: [
+    {
+      loader: "@next/font/google",
+      options: { subsets: ["latin"] },
+    },
+  ],
   experimental: {
     appDir: true,
     // typedRoutes: true,
-    fontLoaders: [
-      {
-        loader: "@next/font/google",
-        options: { subsets: ["latin"] },
-      },
-    ],
   },
   /** Enables hot reloading for local packages without a build step */
   transpilePackages: ["@tincy/components", "@tincy/db"],

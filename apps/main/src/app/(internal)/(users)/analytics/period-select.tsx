@@ -22,7 +22,7 @@ export const PeriodSelect = () => {
   return (
     <Select
       value={value}
-      defaultValue={"30d"}
+      defaultValue="30d"
       onValueChange={(value) => {
         if (!searchParams || !pathname) return;
         const newParams = new URLSearchParams(searchParams);
