@@ -4,6 +4,7 @@ import { prisma } from "@tincy/db";
 
 export default async function AdminDashboardPage() {
   const users = await prisma.user.count();
+  const sites = await prisma.site.count();
 
   return (
     <>
@@ -12,11 +13,11 @@ export default async function AdminDashboardPage() {
           <p className="text-3xl font-bold">{users}</p>
           <p className="text-sm text-gray-600">Users</p>
         </Link>
+        <div className="py-2">
+          <p className="text-3xl font-bold">{sites}</p>
+          <p className="text-sm text-gray-600">Sites</p>
+        </div>
         {/* <div className="py-2">
-     <p className="text-3xl font-bold">{visits}</p>
-     <p className="text-sm text-gray-600">Visits</p>
-   </div>
-   <div className="py-2">
      <p className="text-3xl font-bold">{pageviews}</p>
      <p className="text-sm text-gray-600">Pageviews</p>
    </div>

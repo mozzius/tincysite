@@ -13,21 +13,44 @@ datasource db {
 }
 
 model User {
-    id            String    @id @default(cuid())
+    id            String         @id @default(cuid())
     name          String?
-    email         String?   @unique
+    email         String?        @unique
     emailVerified DateTime?
     image         String?
-    role          UserRole? @default(USER)
+    role          UserRole?      @default(USER)
     accounts      Account[]
     sessions      Session[]
-    createdAt     DateTime  @default(now())
-    updatedAt     DateTime  @default(now()) @updatedAt
+    createdAt     DateTime       @default(now())
+    updatedAt     DateTime       @default(now()) @updatedAt
+    sites         SitesOnUsers[]
 }
 
 enum UserRole {
     ADMIN
     USER
+}
+
+model Site {
+    id        String         @id @default(cuid())
+    name      String
+    url       String         @unique
+    users     SitesOnUsers[]
+    createdAt DateTime       @default(now())
+    updatedAt DateTime       @default(now()) @updatedAt
+}
+
+model SitesOnUsers {
+    id        String   @id @default(cuid())
+    user      User     @relation(fields: [userId], references: [id])
+    userId    String
+    site      Site     @relation(fields: [siteId], references: [id])
+    siteId    String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @default(now()) @updatedAt
+
+    @@index([siteId])
+    @@index([userId])
 }
 
 // ================ NEXT AUTH ================

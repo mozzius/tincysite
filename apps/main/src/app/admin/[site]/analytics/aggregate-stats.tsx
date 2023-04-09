@@ -25,11 +25,11 @@ const schema = z.object({
 });
 
 interface Props {
+  site: string;
   period?: string;
 }
 
-export async function AggregateStats({ period }: Props) {
-  const site = "tincy.site";
+export async function AggregateStats({ site, period }: Props) {
   const params = new URLSearchParams();
   params.append("site_id", site);
   params.append(

@@ -14,7 +14,7 @@ export default async function ListUsersPage() {
     <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
       {users.map((user) => (
         <div
-          className="space-y-4 rounded border bg-white p-6 shadow-lg"
+          className="space-y-4 rounded border bg-white p-6 shadow"
           key={user.id}
         >
           <div className="flex items-center gap-4">

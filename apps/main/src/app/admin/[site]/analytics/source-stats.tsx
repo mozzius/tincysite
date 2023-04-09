@@ -15,11 +15,11 @@ const schema = z.object({
 });
 
 interface Props {
+  site: string;
   period?: string;
 }
 
-export async function SourceStats({ period }: Props) {
-  const site = "tincy.site";
+export async function SourceStats({ site, period }: Props) {
   const params = new URLSearchParams();
   params.append("site_id", site);
   params.append("property", "visit:source");

@@ -8,12 +8,12 @@ const headers = {
 };
 
 interface Props {
+  site: string;
   period?: string;
   metric?: Metric;
 }
 
-export async function TimeSeriesStats({ period, metric }: Props) {
-  const site = "tincy.site";
+export async function TimeSeriesStats({ site, period, metric }: Props) {
   const params = new URLSearchParams();
   params.append("site_id", site);
   if (metric) params.append("metrics", metric);

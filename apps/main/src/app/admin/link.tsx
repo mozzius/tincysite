@@ -1,7 +1,7 @@
 "use client";
 
 import NextLink, { type LinkProps } from "next/link";
-import { useSelectedLayoutSegment } from "next/navigation";
+import { useSelectedLayoutSegments } from "next/navigation";
 
 import { buttonVariants } from "@tincy/components/ui/button";
 
@@ -10,14 +10,14 @@ import { cn } from "~/lib/utils";
 interface Props extends LinkProps, React.HTMLAttributes<HTMLAnchorElement> {}
 
 export const Link = ({ href, className, ...props }: Props) => {
-  const selected = useSelectedLayoutSegment();
+  const selected = useSelectedLayoutSegments();
 
   const segment =
     typeof href === "string"
-      ? href?.split("/").pop()
+      ? href.split("/").pop()
       : href.pathname?.split("/").pop();
 
-  const active = selected === segment;
+  const active = selected.pop() === segment;
 
   return (
     <NextLink

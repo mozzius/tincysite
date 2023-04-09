@@ -28,6 +28,7 @@ export const MetricSelect = () => {
   return (
     <Select
       value={value}
+      defaultValue="visitors"
       onValueChange={(value) => {
         if (!searchParams || !pathname) return;
         const newParams = new URLSearchParams(searchParams);

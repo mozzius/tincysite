@@ -5,6 +5,7 @@ import {
 } from "@tincy/components/ui/avatar";
 
 import { getCurrentUser } from "~/lib/session";
+import { Nav } from "./nav";
 
 export default async function InternalLayout({ children }) {
   // make sure the user is logged in
@@ -26,7 +27,12 @@ export default async function InternalLayout({ children }) {
             </AvatarFallback>
           </Avatar>
         </header>
-        <div className="container border-t">{children}</div>
+        <div className="container border-t">
+          <Nav />
+          <main className="min-h-[300px] rounded-md bg-white p-4 shadow-lg">
+            {children}
+          </main>
+        </div>
         <div className="flex-1" />
         <footer className="container mt-4 border-t py-6 text-sm text-slate-500">
           © {new Date().getFullYear()} Samuel Newman
